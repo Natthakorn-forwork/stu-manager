@@ -32,7 +32,7 @@ export default function Sidebar({
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-blue-700">
-        {!collapsed && <span className="font-bold">Dashboard</span>}
+        {!collapsed && <span className="font-bold">Teacher Dashboard</span>}
 
         <button
           onClick={() => setCollapsed(!collapsed)}

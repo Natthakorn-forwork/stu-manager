@@ -10,6 +10,7 @@ export default function StudentDashboard() {
   const [current, setCurrent] = useState("home");
   const [user, setUser] = useState(null);
   const [collapsed, setCollapsed] = useState(true);
+
   useEffect(() => {
     const saved = localStorage.getItem("currentUser");
     if (!saved) {
@@ -40,16 +41,17 @@ export default function StudentDashboard() {
   };
 
   return (
-      <div className="flex h-screen">
-        <Sidebar
-          current={current}
-          setCurrent={setCurrent}
-          collapsed={collapsed}
-          setCollapsed={setCollapsed}
-        />
-  
-        <main className="flex-1 p-6 bg-gray-100">
-          {renderContent()}
+    <div className="flex h-screen">
+      {/* ✅ ใช้ StudentSidebar */}
+      <StudentSidebar
+        current={current}
+        setCurrent={setCurrent}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+      />
+
+      <main className="flex-1 p-6 bg-gray-100">
+        {renderContent()}
       </main>
     </div>
   );
