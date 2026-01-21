@@ -8,7 +8,7 @@ import Attendance from "../components/Attendance";
 export default function TeacherDashboard() {
   const [current, setCurrent] = useState("home");
   const [user, setUser] = useState(null);
-
+  const [collapsed, setCollapsed] = useState(false);
   useEffect(() => {
     const saved = localStorage.getItem("currentUser");
     if (saved) {
@@ -34,11 +34,17 @@ const renderContent = () => {
   }
 
   return null;
+  
 };
 
-  return (
+     return (
     <div className="flex h-screen">
-      <Sidebar current={current} setCurrent={setCurrent} />
+      <Sidebar
+        current={current}
+        setCurrent={setCurrent}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+      />
 
       <main className="flex-1 p-6 bg-gray-100">
         {renderContent()}
