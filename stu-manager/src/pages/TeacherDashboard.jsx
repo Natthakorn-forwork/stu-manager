@@ -8,7 +8,7 @@ import Attendance from "../components/Attendance";
 export default function TeacherDashboard() {
   const [current, setCurrent] = useState("home");
   const [user, setUser] = useState(null);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   useEffect(() => {
     const saved = localStorage.getItem("currentUser");
     if (saved) {
