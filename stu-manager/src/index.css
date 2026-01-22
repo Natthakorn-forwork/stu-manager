@@ -2,3 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+:root {
+  /* Material Design Motion (MD3) */
+  --md-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-ease-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+  --md-duration-short: 200ms;
+  --md-duration-medium: 300ms;
+  --md-duration-long: 500ms;
+}
+
+/* Gradient motion */
+@keyframes md-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.md-gradient {
+  background-size: 400% 400%;
+  animation: md-gradient 14s var(--md-ease-standard) infinite;
+}

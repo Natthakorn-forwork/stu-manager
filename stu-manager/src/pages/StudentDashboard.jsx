@@ -10,6 +10,8 @@ export default function StudentDashboard() {
   const [current, setCurrent] = useState("home");
   const [user, setUser] = useState(null);
   const [collapsed, setCollapsed] = useState(true);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  
 
   useEffect(() => {
     const saved = localStorage.getItem("currentUser");
